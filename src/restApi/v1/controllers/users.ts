@@ -23,3 +23,13 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
     next(err);
   }
 };
+
+export const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const users = await UserModel.find().lean();
+
+    res.json({ users });
+  } catch (err) {
+    next(err);
+  }
+};
