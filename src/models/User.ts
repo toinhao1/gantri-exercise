@@ -1,4 +1,4 @@
-import { Mongoose, Document, Model, Schema, model } from 'mongoose';
+import { Document, Model, Schema, model } from 'mongoose';
 import { createIdSchema } from '../utils/createIdSchema';
 
 export interface UserDocument extends Document {
