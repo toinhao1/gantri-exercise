@@ -3,7 +3,7 @@ import express, { Application, Router, json } from 'express';
 import { Server } from 'http';
 
 import { host, protocol, port, env, apiBaseUrl } from './config';
-import restApi from './restApi';
+import * as restApi from './restApi';
 
 const useApi = (app: Application, version: string, api: Router, prefix = '/api') => {
   app.use(`${prefix}/${version}`, cors(), json({ limit: '30mb' }), api);
@@ -27,9 +27,7 @@ for (const versionName of versionNames) {
   useApi(app, versionName, api);
 }
 
-export { app };
-
-export default async () => {
+export const initApi = async () => {
   await startServer(app);
   console.info(
     `api gateway is listening on ${apiBaseUrl} in ${env} mode for Process Id ${process.pid}`,
