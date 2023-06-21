@@ -1,0 +1,18 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2021",
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": "./src",
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}
