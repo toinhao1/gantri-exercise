@@ -11,7 +11,8 @@ export const errorHandler = (error: any, req: Request, res: Response, next: Next
       error,
     },
   });
-  res.status(error.code).json({
+  const errorCode = error.code ? error.code : 500;
+  res.status(errorCode).json({
     type: error.type,
     message: error.message,
   });

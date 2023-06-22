@@ -13,9 +13,9 @@ export interface ArtDocument extends Document {
 export type ArtModelType = Model<ArtDocument>;
 
 const schema = new Schema<ArtDocument>({
-  _id: createIdSchema(),
   id: {
     type: Number,
+    required: true,
   },
   title: {
     type: String,
