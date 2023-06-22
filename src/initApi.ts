@@ -2,7 +2,7 @@ import cors from 'cors';
 import express, { Application, Router, json } from 'express';
 import { Server } from 'http';
 
-import { host, protocol, port, env, apiBaseUrl } from './config';
+import { host, protocol, port } from './config';
 import * as restApi from './restApi';
 
 const useApi = (app: Application, version: string, api: Router, prefix = '/api') => {
