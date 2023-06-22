@@ -29,7 +29,4 @@ for (const versionName of versionNames) {
 
 export const initApi = async () => {
   await startServer(app);
-  console.info(
-    `api gateway is listening on ${apiBaseUrl} in ${env} mode for Process Id ${process.pid}`,
-  );
 };
